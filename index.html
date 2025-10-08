@@ -1,0 +1,32 @@
+<html>
+  <body>
+    <ul id=wordlist>
+      <li>...</li>
+      <li>...</li>
+      <li>...</li>
+      <li>...</li>
+      <li>...</li>
+      <li>...</li>
+      <li>...</li>
+      <li>...</li>
+      <li>...</li>
+      <li>...</li>
+    </ul>
+  </body>
+  <script>
+    const N = 5;
+    const V = "aeiouy";
+    const C = "bcdfghklmnprstvzx";
+    const wordlist = document.getElementById("wordlist");
+    const words = wordlist.getElementsByTagName("li");
+    for (let word of words) {
+      let letters = [];
+      for (let i = 0; i < N; i++) {
+        let s = (i % 2) ? V : C;
+        let j = Math.floor(Math.random() * s.length);
+        letters.push(s.charAt(j));
+      }
+      word.textContent = letters.join("");
+    }
+  </script>
+</html>
